@@ -1,0 +1,26 @@
+<mat-table [dataSource]="dataSource" *ngIf="dataSource.length>0">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.aircraftId}} </td>
+    </ng-container>
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+    </ng-container>
+    <ng-container matColumnDef="airline">
+      <th mat-header-cell *matHeaderCellDef> Airline </th>
+      <td mat-cell *matCellDef="let element"> {{element.airline}} </td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element"> 
+        <button mat-raised-button color="warn" (click)="deleteAircraft(element.aircraftId)">Delete</button>
+        <button mat-raised-button color="accent" (click)="openDialogToUpdate(element)">Update</button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</mat-table>
+<button mat-raised-button color="primary" (click)="openDialogToAdd()">Add</button>
+<mat-checkbox *ngFor="let airline of airlineOptions" (change)="selectedAirline($event,airline)">{{airline}}</mat-checkbox>
+<button mat-raised-button color="primary" (click)="applyFilter()">Filter</button>

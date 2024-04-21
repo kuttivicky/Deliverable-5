@@ -1,0 +1,55 @@
+<mat-table [dataSource]="dataSource" *ngIf="dataSource.length>0">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.weatherId}} </td>
+    </ng-container>
+    <ng-container matColumnDef="airportsId">
+      <th mat-header-cell *matHeaderCellDef> Airports </th>
+      <td mat-cell *matCellDef="let element"> {{element.airportsId}} </td>
+    </ng-container>
+    <ng-container matColumnDef="visibility">
+      <th mat-header-cell *matHeaderCellDef> Visibility </th>
+      <td mat-cell *matCellDef="let element"> {{element.visibility}} </td>
+    </ng-container>
+    <ng-container matColumnDef="windSpeed">
+      <th mat-header-cell *matHeaderCellDef> WindSpeed </th>
+      <td mat-cell *matCellDef="let element"> {{element.windSpeed}} </td>
+    </ng-container>
+    <ng-container matColumnDef="windDirection">
+        <th mat-header-cell *matHeaderCellDef> windDirection </th>
+        <td mat-cell *matCellDef="let element"> {{element.windDirection}} </td>
+      </ng-container>
+      <ng-container matColumnDef="timeStamp">
+        <th mat-header-cell *matHeaderCellDef> timeStamp </th>
+        <td mat-cell *matCellDef="let element"> {{element.timeStamp}} </td>
+      </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element"> 
+        <button mat-raised-button color="warn" (click)="deleteWeather(element.weatherId)">Delete</button>
+        <button mat-raised-button color="accent" (click)="openDialogToUpdate(element)">Update</button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</mat-table>
+<button mat-raised-button color="primary" (click)="openDialogToAdd()">Add</button>
+<button mat-raised-button color="primary" (click)="showOLAP()">Show OLAP</button>
+<table *ngIf="olapData.length>0">
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>Wind Direction</th>
+      <th>visibility</th>
+      <th>Max wind speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let element of olapData">
+      <td>{{element[0]}}</td>
+      <td>{{element[1]}}</td>
+      <td>{{element[2]}}</td>
+      <td>{{element[3]}}</td>
+    </tr>
+  </tbody>
+</table>

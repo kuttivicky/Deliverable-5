@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>{{data.isUpdate?"Update":"Add"}}</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>timeStamp</mat-label>
+    <input matInput [(ngModel)]="data.timeStamp">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Airports ID</mat-label>
+    <input matInput [(ngModel)]="data.airportsId">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>visibility</mat-label>
+    <input matInput [(ngModel)]="data.visibility">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>windSpeed</mat-label>
+    <input matInput [(ngModel)]="data.windSpeed">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>windDirection</mat-label>
+    <input matInput [(ngModel)]="data.windDirection">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onOkayClick()">Ok</button>
+</mat-dialog-actions>
+

@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>{{data.isUpdate?"Update":"Add"}}</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>originAirportID</mat-label>
+    <input matInput [(ngModel)]="data.originAirportID">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>airline</mat-label>
+    <input matInput [(ngModel)]="data.airline">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>destinationAirportID</mat-label>
+    <input matInput [(ngModel)]="data.destinationAirportID">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>departureTime</mat-label>
+    <input matInput [(ngModel)]="data.departureTime">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>arrivalTime</mat-label>
+    <input matInput [(ngModel)]="data.arrivalTime">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>status</mat-label>
+    <input matInput [(ngModel)]="data.status">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onOkayClick()">Ok</button>
+</mat-dialog-actions>

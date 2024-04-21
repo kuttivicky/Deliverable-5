@@ -1,0 +1,32 @@
+<mat-table [dataSource]="dataSource" *ngIf="dataSource.length>0">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.logisticId}} </td>
+  </ng-container>
+  <ng-container matColumnDef="originTerminal">
+    <th mat-header-cell *matHeaderCellDef> originTerminal </th>
+    <td mat-cell *matCellDef="let element"> {{element.originTerminal}} </td>
+  </ng-container>
+  <ng-container matColumnDef="destinationTerminal">
+    <th mat-header-cell *matHeaderCellDef> destinationTerminal </th>
+    <td mat-cell *matCellDef="let element"> {{element.destinationTerminal}} </td>
+  </ng-container>
+  <ng-container matColumnDef="originGate">
+    <th mat-header-cell *matHeaderCellDef> originGate </th>
+    <td mat-cell *matCellDef="let element"> {{element.originGate}} </td>
+  </ng-container>
+  <ng-container matColumnDef="destinationGate">
+    <th mat-header-cell *matHeaderCellDef> destinationGate </th>
+    <td mat-cell *matCellDef="let element"> {{element.destinationGate}} </td>
+  </ng-container>
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> Action </th>
+    <td mat-cell *matCellDef="let element"> 
+      <button mat-raised-button color="warn" (click)="deleteFlightLogistic(element.logisticId)">Delete</button>
+      <button mat-raised-button color="accent" (click)="openDialogToUpdate(element)">Update</button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</mat-table>
+<button mat-raised-button color="primary" (click)="openDialogToAdd()">Add</button>

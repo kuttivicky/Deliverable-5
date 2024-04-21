@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>{{data.isUpdate?"Update":"Add"}}</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>recordedTime</mat-label>
+    <input matInput [(ngModel)]="data.recordedTime">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>flight</mat-label>
+    <input matInput [(ngModel)]="data.flight">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Latitude</mat-label>
+    <input matInput [(ngModel)]="data.latitude">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Longitude</mat-label>
+    <input matInput [(ngModel)]="data.longitude">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Altitude</mat-label>
+    <input matInput [(ngModel)]="data.altitude">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Speed</mat-label>
+    <input matInput [(ngModel)]="data.speed">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onOkayClick()">Ok</button>
+</mat-dialog-actions>

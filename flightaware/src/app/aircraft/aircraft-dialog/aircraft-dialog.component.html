@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>{{data.isUpdate?"Update":"Add"}}</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Type</mat-label>
+    <input matInput [(ngModel)]="data.type">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>AirlineID</mat-label>
+    <input matInput [(ngModel)]="data.airline">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onOkayClick()">Ok</button>
+</mat-dialog-actions>

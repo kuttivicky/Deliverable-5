@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>{{data.isUpdate?"Update":"Add"}}</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>originTerminal</mat-label>
+    <input matInput [(ngModel)]="data.originTerminal">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>destinationTerminal</mat-label>
+    <input matInput [(ngModel)]="data.destinationTerminal">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>originGate</mat-label>
+    <input matInput [(ngModel)]="data.originGate">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>destinationGate</mat-label>
+    <input matInput [(ngModel)]="data.destinationGate">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onOkayClick()">Ok</button>
+</mat-dialog-actions>
+
