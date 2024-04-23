@@ -21,3 +21,5 @@ This is the difference between JDBC and Hibernate. In Hibernate there is no need
 
 ### UI Screenshots
 ![image](https://github.com/kuttivicky/Deliverable-5/assets/146025355/59c9b32d-2f49-4f98-8c10-c12578cf3dc8)
+Dialog Box:
+![image](https://github.com/kuttivicky/Deliverable-5/assets/146025355/de99b3ec-4f66-4519-990b-9c0aa5bf1295)
